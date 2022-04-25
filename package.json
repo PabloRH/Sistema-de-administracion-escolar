@@ -4,13 +4,14 @@
   "description": "ADS",
   "main": "src/index.js",
   "scripts": {
-    "dev":"nodemon src"
+    "dev": "nodemon src"
   },
   "author": "Bloque_B",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.1",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.1.3",
     "connect-flash": "^0.1.1",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.5",

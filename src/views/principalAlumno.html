@@ -1,0 +1,64 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <div class="row">
+            <div class="col-3">
+                <div class="col" style="padding-top: 20px;">
+                    <div class="container-fluid">
+                        <div class="card">
+                            <dir class="col-8">
+                                <img src="Arturo.jpg" class="card-img-top" alt="...">
+                            </dir>
+                            <div class="card-body">
+                              <p class="card-text">Arturo Vazquez Lona</p>
+                              <p class="card-text">20200630475</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="col" style="padding-top: 20px;">
+                    <div class="container-fluid">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Pagina principal</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Reinscripcion</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Inscribir ETS</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Saberes previos</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Calificaciones</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Evaluar docente</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Ocupabilidad de horarios</a>
+                            <a onclick="cambiarContraseña();" href="#" class="list-group-item list-group-item-action list-group-item-dark">Cambiar contraseña</a>
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Modificar informacion</a>
+                            <a href="login.html" class="list-group-item list-group-item-action list-group-item-dark">Salir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-8" id="secondaryContent">
+            <div class="container" id="secondContent">
+                
+            </div>
+        </div>
+        </div>
+
+  </body>
+</html>
+<script>
+    var html="asdas";
+    var div= document.getElementById("secondContent");
+    window.onload=function() {
+        document.getElementById("secondContent").insertAdjacentHTML("afterend",
+        "<iframe src='Anuncios.html' width='900' height='600'></iframe></iframe>");
+    }
+    function cambiarContraseña(){
+        document.getElementById("secondContent").innerHTML = '';
+        document.getElementById("secondContent").insertAdjacentHTML("afterend",
+        "<iframe src='Cambiar contraseña.html' width='900' height='600'></iframe></iframe>");
+    }
+
+
+</script>

@@ -1,0 +1,1026 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="utf-8" content="width=device-width, initial-scale=1.0">
+	<title>Reinscripcion</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+	<br>
+    <br>
+	<h1>Reinscripcion</h1>
+	<br>
+	<br>
+
+	<div class="reinscripcion">
+
+		Selecccione alguna de las siguientes opciones para poder visualizar las materias disponibles.
+
+		<br>
+		<br>
+		<br>
+
+		Inscribir por: 
+		<form>
+            <input id="grupo" type="radio" name="insp" value="grupo" onclick="activargrupos()">
+            <label>Grupo</label>
+
+			<select name="grupos" id="grupos" disabled="" onclick="toggle(this)">
+				<optgroup label="Primer Semestre">
+				  <option value="1BM1">1BM1</option>
+				  <option value="1BV1">1BV1</option>
+				</optgroup>
+				<optgroup label="Segundo Semestre">
+					<option value="2BM1">2BM1</option>
+					<option value="2BV1">2BV1</option>
+				</optgroup>
+				  <optgroup label="Tercer Semestre">
+					<option value="3BM1">3BM1</option>
+					<option value="3BV1">3BV1</option>
+				</optgroup>
+			</optgroup>
+			<optgroup label="Cuarto Semestre">
+			  <option value="4BM1">4BM1</option>
+			  <option value="4BV1">4BV1</option>
+		  </optgroup>
+			  </select>
+
+            <br>
+
+            <input id="materia" type="radio" name="insp" value="materia" onclick="activarmaterias()">
+            <label>Materia</label>
+
+			<select name="materias" id="materias" disabled="">
+				<optgroup label="Primer Semestre">
+				  <option>Fundamentos de programcion</option>
+				  <option>Fundamentos economicos</option>
+				  <option>Comunicacion oral y escrita</option>
+				  <option>Mecanica y electromagnetismo</option>
+				</optgroup>
+				<optgroup label="Segundo Semestre">
+					<option>Algebra lineal</option>
+					<option>Estructura de datos</option>
+					<option>Ingenieria, etica y sociedad</option>
+					<option>Fundamentos de diseño digital</option>
+				</optgroup>
+				  <optgroup label="Tercer Semestre">
+					<option>Paradigmas de programcion</option>
+					<option>Ecuaciones diferenciales</option>
+					<option>Liderazgo personal</option>
+					<option>Bases de datos</option>
+				</optgroup>
+			</optgroup>
+			<optgroup label="Cuarto Semestre">
+			  <option>Probabilidad y estadistica</option>
+			  <option>Analisis y diseño de sistemas</option>
+			  <option>Fundamentos de inteligencia artificial</option>
+			  <option>Matematicas avanzadas para la ingenieria</option>
+		  </optgroup>
+			  </select>
+
+			  <input id="semestre" type="radio" name="insp" value="semestre" onclick="activarsemestres()">
+            <label>Semestre</label>
+
+			<select id="semestres" name="semestres" disabled="" onclick="toggle(this)">
+				  <option value="primero">Primer Semestre</option>
+				  <option value="segundo">Segundo Semestre</option>
+				  <option value="tercer">Tercer Semestre</option>
+				  <option value="cuarto">Cuarto Semestre</option>
+
+			</select>
+
+        </form>
+
+		<br>
+
+	</div>
+
+	<div class="tabla1" id="tabla1" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla1" font-size="16px">
+			<thead>
+				<tr>
+					<th class="table-left"></th>
+					<th class="table-left">Clave</th>
+					<th class="table-left">Materia</th>
+					<th class="table-left">Grupo</th>
+					<th class="table-left">Profesor</th>
+					<th class="table-left">Salon</th>
+					<th class="table-left">Lunes</th>
+					<th class="table-left">Martes</th>
+					<th class="table-left">Miercoles</th>
+					<th class="table-left">Jueves</th>
+					<th class="table-left">Viernes</th>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B101</td>
+					<td class="table-left">Fundamentos de progranación</td>
+					<td class="table-left">1BM1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">1011</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B102</td>
+					<td class="table-left">Fundamentos economicos</td>
+					<td class="table-left">1BM1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">1012</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B103</td>
+					<td class="table-left">Comunicacion oraal y escrita</td>
+					<td class="table-left">1BM1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">1013</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B104</td>
+					<td class="table-left">Mecanica y electromagnetismo</td>
+					<td class="table-left">1BM1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">1014</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla11" id="tabla11" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla11" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B101</td>
+					<td class="table-left">Fundamentos de progranación</td>
+					<td class="table-left">1BV1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">1011</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B102</td>
+					<td class="table-left">Fundamentos economicos</td>
+					<td class="table-left">1BV1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">1012</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B103</td>
+					<td class="table-left">Comunicacion oraal y escrita</td>
+					<td class="table-left">1BV1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">1013</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B104</td>
+					<td class="table-left">Mecanica y electromagnetismo</td>
+					<td class="table-left">1BV1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">1014</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla2" id="tabla2" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla2" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B201</td>
+					<td class="table-left">Algebra lineal</td>
+					<td class="table-left">2BM1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">2011</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B202</td>
+					<td class="table-left">Estructura de datos</td>
+					<td class="table-left">2BM1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">2012</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B203</td>
+					<td class="table-left">Ingenieria, etica y sociedad</td>
+					<td class="table-left">2BM1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">2013</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B204</td>
+					<td class="table-left">Fundamentos de diseño digital</td>
+					<td class="table-left">2BM1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">2014</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla21" id="tabla21" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla21" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B201</td>
+					<td class="table-left">Algebra lineal</td>
+					<td class="table-left">2BV1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">2011</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B202</td>
+					<td class="table-left">Estructura de datos</td>
+					<td class="table-left">2BV1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">2012</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B203</td>
+					<td class="table-left">Ingenieria, etica y sociedad</td>
+					<td class="table-left">2BV1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">2013</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B204</td>
+					<td class="table-left">Fundamentos de diseño digital</td>
+					<td class="table-left">2BV1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">2014</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla3" id="tabla3" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla3" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B301</td>
+					<td class="table-left">Paradigmas de programacion</td>
+					<td class="table-left">3BM1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">3011</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B302</td>
+					<td class="table-left">Ecuaciones diferenciales</td>
+					<td class="table-left">3BM1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">3012</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B303</td>
+					<td class="table-left">Liderazgo Personal</td>
+					<td class="table-left">3BM1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">3013</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B304</td>
+					<td class="table-left">Bases de datos</td>
+					<td class="table-left">3BM1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">3014</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla31" id="tabla31" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla31" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B301</td>
+					<td class="table-left">Paradigmas de programacion</td>
+					<td class="table-left">3BV1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">3011</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B302</td>
+					<td class="table-left">Ecuaciones diferenciales</td>
+					<td class="table-left">3BV1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">3012</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B303</td>
+					<td class="table-left">Liderazgo Personal</td>
+					<td class="table-left">3BV1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">3013</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B304</td>
+					<td class="table-left">Bases de datos</td>
+					<td class="table-left">3BV1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">3014</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla4" id="tabla4" style="display: none">
+		<h2>Materias disponibles</h2>
+
+		<br>
+
+		<table class="tabla" id="tabla4" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B401</td>
+					<td class="table-left">Probabilidad y estadistica</td>
+					<td class="table-left">4BM1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">4011</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B402</td>
+					<td class="table-left">Analisis y diseño de sistemas</td>
+					<td class="table-left">4BM1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">4012</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B403</td>
+					<td class="table-left">Fundamentos de inteligencia artificial</td>
+					<td class="table-left">4BM1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">4013</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B404</td>
+					<td class="table-left">Matematicas avanzadas para la ingenieria</td>
+					<td class="table-left">4BM1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">4014</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">7:00 am - 8:30 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="tabla41" id="tabla41" style="display: none">
+		<h3>Materias disponibles</h3>
+
+		<br>
+
+		<table class="tabla" id="tabla41" font-size="16px">
+			<thead>
+				<tr>
+					<td class="table-left"></td>
+					<td class="table-left">Clave</td>
+					<td class="table-left">Materia</td>
+					<td class="table-left">Grupo</td>
+					<td class="table-left">Profesor</td>
+					<td class="table-left">Salon</td>
+					<td class="table-left">Lunes</td>
+					<td class="table-left">Martes</td>
+					<td class="table-left">Miercoles</td>
+					<td class="table-left">Jueves</td>
+					<td class="table-left">Viernes</td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B401</td>
+					<td class="table-left">Probabilidad y estadistica</td>
+					<td class="table-left">4BV1</td>
+					<td class="table-left">Gustavo Garcia</td>
+					<td class="table-left">4011</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B402</td>
+					<td class="table-left">Analisis y diseño de sistemas</td>
+					<td class="table-left">4BV1</td>
+					<td class="table-left">Juan Perez</td>
+					<td class="table-left">4012</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B403</td>
+					<td class="table-left">Fundamentos de inteligencia artificial</td>
+					<td class="table-left">4BV1</td>
+					<td class="table-left">Marta Sanchez</td>
+					<td class="table-left">4013</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+				<tr>
+					<td><input type="button" value="Enviar" class="anadir"></td>
+					<td class="table-left">B404</td>
+					<td class="table-left">Matematicas avanzadas para la ingenieria</td>
+					<td class="table-left">4BV1</td>
+					<td class="table-left">Carlos Mensias</td>
+					<td class="table-left">4014</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+					<td class="table-left">13:30 am - 15:00 am</td>
+					<td class="table-left"> - </td>
+				</tr>
+			</thead>
+		</table>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+	</div>
+
+	<h3>Materias inscritas</h3>
+
+	<table id="tablanueva" class="tablanueva">
+		<tr>
+			<th class="table-left">Clave</th>
+			<th class="table-left">Materia</th>
+			<th class="table-left">Grupo</th>
+			<th class="table-left">Profesor</th>
+			<th class="table-left">Salon</th>
+			<th class="table-left">Lunes</th>
+			<th class="table-left">Martes</th>
+			<th class="table-left">Miercoles</th>
+			<th class="table-left">Jueves</th>
+			<th class="table-left">Viernes</th>
+		</tr>
+	</table>
+
+    <div class="alumno">
+		<ul>
+			<li class="datosa">
+				<span class="fotoa"><img src="alumna.jpg" width="100" height="100"> </span>
+			</li>
+		</ul>
+		<ul>
+			<li class="datosa">
+				<span class="alumnoda">Valeria Romo Sanchez</span>
+			</li>
+		</ul>
+		<ul>
+			<li class="datosa">
+				<span class="alumnoda">2020578967</span>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="navegacion">
+		<ul>
+			<li class="lista">
+				<a href="Pagina_principal.html">
+					<span class="icon" href="Pagina_principal.html"></span>
+					<span class="tittle">Pagina Principial</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Reinscripciones</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Inscribir ETS</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Saberes previos</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Calificaciones</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Evaluar Docente</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Ocupabilidad de horarios</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Cambiar contraseña</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Modificar informacion</span>
+				</a>
+			</li>
+			<li class="lista">
+				<a href="#">
+					<span class="icon"></span>
+					<span class="tittle">Salir</span>
+				</a>
+			</li>
+		</ul>
+		
+	</div>
+
+	<script>
+		//Para la seleccion de un una opcion
+		let lista = document.querySelectorAll('.lista');
+		for(let i=0;i<lista.length;i++)
+		{
+		  lista[i].onclick = function(){
+			let j=0;
+			while(j<lista.length)
+			{
+				lista[j++].className = 'lista'
+			}
+			lista[i].className = 'lista activa'
+		}
+	}
+	</script>
+
+	<script type="text/javascript">
+		function activargrupos(){
+			document.getElementById('grupos').disabled=false
+			document.getElementById('materias').disabled=true
+			document.getElementById('semestres').disabled=true
+		}
+	</script>
+
+	<script type="text/javascript">
+		function activarmaterias(){
+			document.getElementById('materias').disabled=false
+			document.getElementById('grupos').disabled=true
+			document.getElementById('semestres').disabled=true
+		}
+	</script>
+
+	<script type="text/javascript">
+		function activarsemestres(){
+			document.getElementById('semestres').disabled=false
+			document.getElementById('materias').disabled=true
+			document.getElementById('grupos').disabled=true
+		}
+	</script>
+
+	<script>
+       function toggle(o){
+		   var a=document.querySelector(".tabla1");
+		   var b=document.querySelector(".tabla11");
+		   var c=document.querySelector(".tabla2");
+		   var d=document.querySelector(".tabla21");
+		   var e=document.querySelector(".tabla3");
+		   var f=document.querySelector(".tabla31");
+		   var g=document.querySelector(".tabla4");
+		   var h=document.querySelector(".tabla41");
+		   
+		   if(o.value ==="1BM1"){
+			   a.style.display="block";
+			   b.style.display="none";
+			   c.style.display="none";
+			   d.style.display="none";
+			   e.style.display="none";
+			   f.style.display="none";
+			   g.style.display="none";
+			   h.style.display="none";
+		   }
+
+		   if(o.value ==="1BV1"){
+			   a.style.display="none";
+			   b.style.display="block";
+			   c.style.display="none";
+			   d.style.display="none";
+			   e.style.display="none";
+			   f.style.display="none";
+			   g.style.display="none";
+			   h.style.display="none";
+		   }
+
+		   if(o.value === "2BM1"){
+			   a.style.display="none";
+			   b.style.display="none";
+			   c.style.display="block";
+			   d.style.display="none";
+			   e.style.display="none";
+			   f.style.display="none";
+			   g.style.display="none";
+			   h.style.display="none";
+		   }
+
+		   if(o.value === "2BV1"){
+			   a.style.display="none";
+			   b.style.display="none";
+			   c.style.display="none";
+			   d.style.display="block";
+			   e.style.display="none";
+			   f.style.display="none";
+			   g.style.display="none";
+			   h.style.display="none";
+		   }
+		   if(o.value === "3BM1"){
+			   a.style.display="none";
+			   b.style.display="none";
+			   c.style.display="none";
+			   d.style.display="none";
+			   e.style.display="block";
+			   f.style.display="none";
+			   g.style.display="none";
+			   h.style.display="none";
+		   }
+
+		   if(o.value === "3BV1"){
+			   a.style.display="none";
+			   b.style.display="none";
+			   c.style.display="none";
+			   d.style.display="none";
+			   e.style.display="none";
+			   f.style.display="block";
+			   g.style.display="none";
+			   h.style.display="none";
+	       }
+
+	       if(o.value === "4BM1"){
+		       a.style.display="none";
+		       b.style.display="none";
+		       c.style.display="none";
+		       d.style.display="none";
+		       e.style.display="none";
+		       f.style.display="none";
+		       g.style.display="block";
+		       h.style.display="none";
+           }
+
+          if(o.value === "4BV1"){
+	          a.style.display="none";
+	          b.style.display="none";
+	          c.style.display="none";
+	          d.style.display="none";
+	          e.style.display="none";
+	          f.style.display="none";
+	          g.style.display="none";
+	          h.style.display="block";
+           }
+
+		   if(o.value ==="primero"){
+			a.style.display="block";
+			b.style.display="block";
+			c.style.display="none";
+			d.style.display="none";
+			e.style.display="none";
+			f.style.display="none";
+			g.style.display="none";
+			h.style.display="none";
+		}
+
+		if(o.value ==="segundo"){
+			a.style.display="none";
+			b.style.display="none";
+			c.style.display="block";
+			d.style.display="block";
+			e.style.display="none";
+			f.style.display="none";
+			g.style.display="none";
+			h.style.display="none";
+		}
+
+		if(o.value === "tercer"){
+			a.style.display="none";
+			b.style.display="none";
+			c.style.display="none";
+			d.style.display="none";
+			e.style.display="block";
+			f.style.display="block";
+			g.style.display="none";
+			h.style.display="none";
+		}
+
+		if(o.value === "cuarto"){
+			a.style.display="none";
+			b.style.display="none";
+			c.style.display="none";
+			d.style.display="none";
+			e.style.display="none";
+			f.style.display="none";
+			g.style.display="block";
+			h.style.display="block";
+		}
+        }
+
+    </script>
+
+	<script>
+		$(document).ready(function(){
+			$('.anadir').on('click', function() {
+			var hermano=$(this).parent();
+			$("#tablanueva").append("<tr>\
+								<td>"+hermano.siblings("td:eq(0)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(1)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(2)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(3)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(4)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(5)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(6)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(7)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(8)").text()+"</td>\
+								<td>"+hermano.siblings("td:eq(9)").text()+"</td>\
+												</tr>")
+		  });
+		})
+	</script>
+
+
+
+</body>

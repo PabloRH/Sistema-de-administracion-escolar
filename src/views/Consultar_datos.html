@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title> </title>
+  </head>
+  <body>
+    <h1></h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <div class="container">
+        <h1 text-align="center">Consultar datos</h1>
+        <div class="row">
+            <div class="col">
+            Seleccione que datos de desea consultar: <select name="datos" id="grupos" onclick="toggle(this)">  
+				  <option value="personales">Personales</option>
+				  <option value="academicos">Academicos</option>
+			  </select>
+
+			  <br>
+			  <br>
+
+			  <div class="form-check form-switch" id="habilitar" disabled="" style="display: none">
+				<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="activartextos()">
+				<label class="form-check-label" for="flexSwitchCheckDefault">Modificar datos</label>
+			  </div>
+
+			  <br>
+			  <br>
+              
+              
+              
+            <div class="datosp" id="datosp" style="display: none">
+                <span>Nombre(s):</span><input type="text" name="alumno" id="nombre" value="nombre" disabled=""> 
+				<br>
+				<br>
+                <span>Apellido Paterno:</span> <input type="text" name="alumno" id="apellidop" value="apellidop" disabled="">
+				<br>
+				<br>
+                <span>Apellido Materno:</span> <input type="text" name="alumno" id="apellidom" value="apellidom" disabled="">
+				<br>
+				<br>
+                <span>Calle:</span> <input type="text" name="alumno" value="calle" id="calle" disabled="">
+				<br>
+				<br>
+                <span>No. Exterior:</span> <input type="text" name="alumno" id="noe" value="noe" disabled="">
+				<br>
+				<br>
+                <span>No. Interior:</span> <input type="text" name="alumno" id="noi" value="noi" disabled="">
+				<br>
+				<br>
+                <span>Colonia:</span> <input type="text" name="alumno" id="colo" value="colo" disabled="">
+				<br>
+				<br>
+                <span>C.P:</span> <input type="text" name="alumno" id="cp" value="cp" disabled="">
+				<br>
+				<br>
+                <span>Municipio:</span> <input type="text" name="alumno" id="muni" value="muni" disabled="">
+				<br>
+				<br>
+                <span>Estado:</span> <input type="text" name="alumno" id="esta" value="esta" disabled="">
+				<br>
+				<br>
+                <span>Pais:</span> <input type="text" name="alumno" id="pais" value="pais" disabled="">
+				<br>
+				<br>
+                <span>CURP:</span> <input type="text" name="alumno" id="curp" value="curp" disabled="">
+				<br>
+				<br>
+                <span>RFC:</span> <input type="text" name="alumno" id="rfc" value="rfc" disabled="">
+				<br>
+				<br>
+                <span>Fecha de nacimiento:</span> <input type="date" id="fecha" name="fecha" disabled="">
+				<br>
+				<br>
+                
+            </div>
+
+            <div class="datosa" id="datosa" style="display: none">
+                <span>Boleta:</span>
+				<br>
+                <span>Escuela:</span>
+				<br>
+                <span>Carrera:</span>
+				<br>
+                <span>Especialidad:</span>
+				<br>
+                <span>Semestres cursados:</span>
+				<br>
+                <span>Semestres disponibles:</span>
+				<br>
+            </div>
+
+			<div class="guardarb" id="guardarb" style="display: none">
+				<input class="btn btn-primary" type="submit" id="guardar" value="Guardar Cambios" disabled="">
+			</div> 
+              
+              <script>
+                function toggle(o){
+                    var a=document.querySelector(".datosp");
+                    var b=document.querySelector(".datosa");
+					var c=document.querySelector("habilitar");
+					var d=document.querySelector("guardarb");
+                    
+                    if(o.value ==="personales"){
+                        a.style.display="block";
+                        b.style.display="none";
+						c.style.display="block";
+						d.style.display="block";
+                    }
+
+                    if(o.value ==="academicos"){
+                        a.style.display="none";
+                        b.style.display="block";
+						c.style.display="none";
+						d.style.display="none";
+                    }
+         
+                    
+                 }
+         
+             </script>
+
+			 <script type="text/javascript">
+				function activartextos(){
+					document.getElementById('nombre').disabled=false;
+					document.getElementById('apellidop').disabled=false;
+					document.getElementById('apellidom').disabled=false;
+					document.getElementById('apellidom').disabled=false;
+					document.getElementById('calle').disabled=false;
+					document.getElementById('noe').disabled=false;
+					document.getElementById('noi').disabled=false;
+					document.getElementById('apellidom').disabled=false;
+					document.getElementById('colo').disabled=false;
+					document.getElementById('cp').disabled=false;
+					document.getElementById('muni').disabled=false;
+					document.getElementById('esta').disabled=false;
+					document.getElementById('pais').disabled=false;
+					document.getElementById('curp').disabled=false;
+					document.getElementById('rfc').disabled=false;
+					document.getElementById('fecha').disabled=false;
+					document.getElementById('guardar').disabled=false;
+				}
+			 </script>
+
+            </div>
+    </div>
+
+  </body>
+</html>
